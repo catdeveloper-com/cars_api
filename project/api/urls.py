@@ -1,11 +1,11 @@
 """API маршруты."""
 
 from django.urls import path, include, re_path
-from rest_framework.routers import SimpleRouter
+from rest_framework.routers import DefaultRouter
 
 from api.views import CountryViewSet, ManufacturerViewSet, CarViewSet, CommentViewSet
 
-router = SimpleRouter()
+router = DefaultRouter()
 router.register('countries', CountryViewSet)
 router.register('manufacturers', ManufacturerViewSet)
 router.register('cars', CarViewSet)
