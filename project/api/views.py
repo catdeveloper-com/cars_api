@@ -6,6 +6,7 @@ from rest_framework.decorators import action
 from rest_framework.response import Response
 
 from api.models import Country, Manufacturer, Car, Comment
+from api.permissions import CommentPermission
 from api.serializers import CountrySerializer, ManufacturerSerializer, CarSerializer, CommentSerializer
 
 
@@ -120,3 +121,4 @@ class CommentViewSet(viewsets.ModelViewSet):
 
     queryset = Comment.objects.all()
     serializer_class = CommentSerializer
+    permission_classes = [CommentPermission]
