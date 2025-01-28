@@ -1,3 +1,46 @@
 """Модели для API."""
 
 from django.db import models
+
+
+class Country(models.Model):
+    """Модель страны."""
+    name = models.CharField(max_length=100, )
+
+    def __str__(self) -> str:
+        """Строковое представление."""
+        return self.name
+
+
+class Manufacturer(models.Model):
+    """Модель производителя."""
+    name = models.CharField(max_length=100, )
+    country = models.ForeignKey(Country, on_delete=models.PROTECT)
+
+    def __str__(self) -> str:
+        """Строковое представление."""
+        return self.name
+
+
+class Car(models.Model):
+    """Модель машины."""
+    name = models.CharField(max_length=100, )
+    manufacturer = models.ForeignKey(Manufacturer, on_delete=models.PROTECT)
+    start_production = models.DateField()
+    end_production = models.DateField()
+
+    def __str__(self) -> str:
+        """Строковое представление."""
+        return self.name
+
+
+class Comment(models.Model):
+    """Модель комментария."""
+    email = models.EmailField()
+    car = models.ForeignKey(Car, on_delete=models.CASCADE)
+    created = models.DateTimeField(auto_now_add=True)
+    text = models.CharField(max_length=4096)
+
+    def __str__(self) -> str:
+        """Строковое представление."""
+        return self.text
