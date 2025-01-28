@@ -23,12 +23,12 @@ class CarSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Car
-        fields = ('id', 'manufacturer', 'start_production', 'end_production', 'comments', 'comments_count',)
+        fields = ('id', 'name', 'manufacturer', 'start_production', 'end_production', 'comments', 'comments_count',)
 
 
 class ManufacturerSerializer(serializers.ModelSerializer):
     """Сериализатор производителя."""
-    cars = CarSerializer(source='cars', many=True, read_only=True)
+    cars = CarSerializer(many=True, read_only=True)
 
     class Meta:
         model = Manufacturer
