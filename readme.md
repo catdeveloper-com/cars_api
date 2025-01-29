@@ -8,7 +8,7 @@ With Docker
 
 1. Cloning git repository and switch to repository folder:
 ```
-git clone https://github.com/catdeveloper-com/cars_api
+git clone https://github.com/catdeveloper-com/cars_api.git
 cd cars_api
 ```
 2. Run containers: `docker-compose up -d`
@@ -25,7 +25,7 @@ Without Docker
 
 1. Cloning git repository and switch to repository folder:
 ```
-git clone https://github.com/catdeveloper-com/cars_api
+git clone https://github.com/catdeveloper-com/cars_api.git
 cd cars_api
 ```
 2. Create virtual environment: `python -m venv .venv`
