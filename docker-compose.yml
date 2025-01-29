@@ -12,7 +12,10 @@ services:
     env_file:
       - .env
     environment:
-      - DJANGO_ENV=production
+      DJANGO_ENV: production
+      POSTGRES_HOST: db
+    depends_on:
+      - db
   db:
     image: postgres:17
     ports:
@@ -21,6 +24,7 @@ services:
       - .env
     environment:
       PGDATA: /var/lib/postgresql/data/pgdata
+      POSTGRES_HOST: db
 
     volumes:
       - ./pgdata:/var/lib/postgresql/data/pgdata
