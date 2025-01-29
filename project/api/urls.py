@@ -1,6 +1,6 @@
 """API маршруты."""
 
-from django.urls import path, include, re_path
+from django.urls import path, include
 from rest_framework.routers import DefaultRouter
 
 from api.views import CountryViewSet, ManufacturerViewSet, CarViewSet, CommentViewSet
