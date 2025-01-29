@@ -13,7 +13,6 @@ router.register('comments', CommentViewSet)
 
 urlpatterns = [
     path('', include(router.urls)),
-    path('drf-auth/', include('rest_framework.urls')),
-    path('auth/', include('djoser.urls')),
-    re_path(r'^auth/', include('djoser.urls.authtoken')),
+    path('drf-auth/', include('rest_framework.urls', namespace='rest_framework')),
+    path('auth/', include('djoser.urls.authtoken')),
 ]
