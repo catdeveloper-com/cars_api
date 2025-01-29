@@ -15,7 +15,10 @@ cd cars_api
 3. import `dump.sql` to PostgreSQL DB:
 - For windows Power Shell: `Get-Content dump.sql | docker-compose exec -T db psql -U your_db_username -d your_database_name`
 - For windows CMD and Linux(debians dist.): `docker-compose exec -T db psql -U your_db_username -d your_database_name < dump.sql`
-
+4. Login to Django admin panel with this credentials:
+- username: `admin`
+- password: `123`
+- panel url: `http://host:port/admin/`
 
 Without Docker
 --------------
