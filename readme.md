@@ -1,7 +1,7 @@
 How to install
 ==============
 
-**[ ! ] REQUIRE python >= 3.10.11 [ ! ]**
+**[ ! ] REQUIRE python >= 3.10.11, PostgresSQL >= 14 [ ! ]**
 
 With Docker
 --------------
